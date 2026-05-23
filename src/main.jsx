@@ -19,7 +19,8 @@ import "./styles.css";
 
 const contactEmail = "verdeprev@gmail.com";
 const mailSubject = "Solicitação de análise previdenciária";
-const mailHref = `mailto:${contactEmail}?subject=${encodeURIComponent(mailSubject)}`;
+const mailBody = "Olá! Gostaria de solicitar uma análise administrativa previdenciária.";
+const mailHref = `mailto:${contactEmail}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
 const services = [
   {
@@ -77,7 +78,14 @@ function App() {
       <header className="header">
         <div className="container nav">
           <a className="brand" href="#inicio" aria-label="VerdePrev">
-            <img src="/10_logo_header_site_2400x650.png" alt="VerdePrev Assessoria Previdenciária" />
+            <img src="/06_simbolo_verde_transparente_1024.png" alt="Símbolo VerdePrev" />
+            <div className="brandText">
+              <strong>
+                <span className="brandGreen">Verde</span>
+                <span className="brandGold">Prev</span>
+              </strong>
+              <small>Assessoria Previdenciária</small>
+            </div>
           </a>
           <nav className="links" aria-label="Menu principal">
             <a href="#servicos">Serviços</a>
@@ -91,6 +99,7 @@ function App() {
 
       <main id="inicio">
         <section className="hero">
+          <div className="heroGlow" aria-hidden="true" />
           <div className="container heroGrid">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -98,11 +107,12 @@ function App() {
               transition={{ duration: 0.6 }}
               className="heroText"
             >
-              <img className="heroLogo" src="/10_logo_header_site_2400x650.png" alt="VerdePrev Assessoria Previdenciária" />
               <span className="eyebrow">Assessoria administrativa previdenciária 100% online</span>
-              <h1>Seu caminho no INSS com mais clareza, organização e segurança.</h1>
+              <img className="heroLogo" src="/09_logo_horizontal_transparente.png" alt="VerdePrev Assessoria Previdenciária" />
+              <h1>A marca é previdência com clareza. O atendimento é administrativo, estratégico e humano.</h1>
               <p className="lead">
-                A VerdePrev oferece assessoria administrativa previdenciária para ajudar você a entender direitos, organizar documentos e solicitar aposentadorias e benefícios do INSS com orientação simples e estratégica.
+                A VerdePrev oferece assessoria administrativa previdenciária para aposentadorias, auxílio por incapacidade,
+                BPC/LOAS, salário-maternidade, revisões e outros benefícios do INSS, com atendimento 100% online.
               </p>
               <div className="heroActions">
                 <a className="primaryButton" href={mailHref}>
@@ -111,13 +121,13 @@ function App() {
                 <a className="secondaryButton" href="#servicos">Ver benefícios atendidos</a>
               </div>
               <div className="miniBenefits">
-                {benefits.slice(0, 2).map((item) => (
+                {benefits.map((item) => (
                   <div key={item}><CheckCircle2 /> <span>{item}</span></div>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.aside
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -125,25 +135,29 @@ function App() {
             >
               <img className="watermark" src="/05_simbolo_branco_transparente_1024.png" alt="" aria-hidden="true" />
               <p>Diagnóstico VerdePrev</p>
-              <h2>Análise administrativa completa</h2>
+              <h2>O que analisamos para você</h2>
               <span>
-                Um levantamento para identificar tempo de contribuição, pendências, documentos necessários e caminhos administrativos possíveis para aposentadorias e benefícios.
+                Um levantamento administrativo completo para identificar direitos, pendências, documentos e caminhos possíveis junto ao INSS.
               </span>
               <div className="checkList">
-                {benefits.map((item) => (
-                  <div key={item}><CheckCircle2 /> <small>{item}</small></div>
-                ))}
+                <div><CheckCircle2 /><small>Aposentadorias e regras de transição</small></div>
+                <div><CheckCircle2 /><small>Auxílio por incapacidade e documentação médica</small></div>
+                <div><CheckCircle2 /><small>BPC/LOAS e análise administrativa</small></div>
+                <div><CheckCircle2 /><small>Salário-maternidade e outros benefícios</small></div>
+                <div><CheckCircle2 /><small>Revisões, recursos e organização documental</small></div>
               </div>
-            </motion.div>
+            </motion.aside>
           </div>
         </section>
 
         <section id="servicos" className="section white">
           <div className="container">
-            <div className="sectionTitle">
+            <div className="sectionTitle left">
               <p>Serviços</p>
               <h2>Assessoria para aposentadorias, auxílios e benefícios do INSS</h2>
-              <span>Atuação administrativa, atendimento humano e comunicação simples para transformar regras complexas em decisões mais claras e organizadas.</span>
+              <span>
+                Atuação administrativa, atendimento humano e comunicação simples para transformar regras complexas em decisões mais claras e organizadas.
+              </span>
             </div>
 
             <div className="serviceGrid">
@@ -164,14 +178,21 @@ function App() {
               <p className="kicker">Sobre a VerdePrev</p>
               <h2>Previdência explicada de forma simples, técnica e transparente.</h2>
               <p>
-                A VerdePrev nasceu para oferecer assessoria administrativa previdenciária, com foco em planejamento, organização documental, prevenção de erros e tomada de decisão consciente.
+                A VerdePrev nasceu para oferecer assessoria administrativa previdenciária, com foco em planejamento,
+                organização documental, prevenção de erros e tomada de decisão consciente.
               </p>
               <p>
-                O atendimento é 100% online, sem exposição de nome pessoal ou localização, com orientação clara sobre documentos, vínculos, contribuições, pedidos administrativos e acompanhamento junto aos canais oficiais.
+                O atendimento é 100% online, sem exposição de nome pessoal ou localização, com orientação clara sobre documentos,
+                vínculos, contribuições, pedidos administrativos e acompanhamento junto aos canais oficiais.
               </p>
             </div>
             <div className="values">
-              {["Clareza", "Estratégia", "Segurança", "Atendimento online"].map((item) => (
+              {[
+                "Clareza",
+                "Estratégia",
+                "Segurança",
+                "Atendimento online",
+              ].map((item) => (
                 <div key={item} className="valueCard">
                   <CheckCircle2 />
                   <h3>{item}</h3>
@@ -202,7 +223,10 @@ function App() {
             <div className="cta">
               <p>Contato</p>
               <h2>Solicite uma análise administrativa previdenciária</h2>
-              <span>Envie uma mensagem para a VerdePrev e receba orientação inicial sobre os próximos passos para aposentadoria, auxílio por incapacidade, BPC, salário-maternidade ou outros benefícios do INSS.</span>
+              <span>
+                Envie uma mensagem para a VerdePrev e receba orientação inicial sobre os próximos passos para aposentadoria,
+                auxílio por incapacidade, BPC, salário-maternidade ou outros benefícios do INSS.
+              </span>
               <div className="ctaActions">
                 <a className="primaryButton" href={mailHref}>
                   <Mail /> {contactEmail}
