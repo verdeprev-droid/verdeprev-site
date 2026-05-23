@@ -18,9 +18,20 @@ import { motion } from "framer-motion";
 import "./styles.css";
 
 const contactEmail = "verdeprev@gmail.com";
+const instagramUrl = "https://www.instagram.com/verdeprev";
 const mailSubject = "Solicitação de análise previdenciária";
 const mailBody = "Olá! Gostaria de solicitar uma análise administrativa previdenciária.";
 const mailHref = `mailto:${contactEmail}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}
 
 const services = [
   {
@@ -93,7 +104,12 @@ function App() {
             <a href="#processo">Como funciona</a>
             <a href="#contato">Contato</a>
           </nav>
-          <a className="navButton" href={mailHref}>Falar com a VerdePrev</a>
+          <div className="navActions">
+            <a className="instagramIcon" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram da VerdePrev">
+              <InstagramIcon />
+            </a>
+            <a className="navButton" href={mailHref}>Falar com a VerdePrev</a>
+          </div>
         </div>
       </header>
 
@@ -244,6 +260,7 @@ function App() {
                   <Mail /> {contactEmail}
                 </a>
                 <button className="secondaryButton disabled" type="button"><MessageCircle /> WhatsApp em breve</button>
+                <a className="secondaryButton" href={instagramUrl} target="_blank" rel="noopener noreferrer"><InstagramIcon /> Instagram</a>
               </div>
             </div>
           </div>
@@ -256,6 +273,7 @@ function App() {
           <div>
             <p>© 2026 VerdePrev Assessoria Previdenciária. Todos os direitos reservados.</p>
             <p>Atendimento digital com orientação previdenciária especializada.</p>
+            <a className="footerInstagram" href={instagramUrl} target="_blank" rel="noopener noreferrer"><InstagramIcon /> Instagram</a>
           </div>
         </div>
       </footer>
