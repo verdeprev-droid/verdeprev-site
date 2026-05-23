@@ -60,8 +60,8 @@ const services = [
   },
   {
     icon: <Users />,
-    title: "Atendimento 100% online",
-    text: "Acompanhamento claro e próximo, sem necessidade de deslocamento, com comunicação simples do início ao fim.",
+    title: "Atendimento próximo",
+    text: "Comunicação simples e acolhedora para orientar os próximos passos e facilitar o envio das informações necessárias.",
   },
 ];
 
@@ -93,7 +93,7 @@ function App() {
             <a href="#processo">Como funciona</a>
             <a href="#contato">Contato</a>
           </nav>
-          <a className="navButton" href={mailHref}>Solicitar análise</a>
+          <a className="navButton" href={mailHref}>Falar com a VerdePrev</a>
         </div>
       </header>
 
@@ -116,7 +116,7 @@ function App() {
               </p>
               <div className="heroActions">
                 <a className="primaryButton" href={mailHref}>
-                  Solicitar análise <ArrowRight />
+                  Falar com a VerdePrev <ArrowRight />
                 </a>
                 <a className="secondaryButton" href="#servicos">Conhecer benefícios atendidos</a>
               </div>
@@ -188,15 +188,27 @@ function App() {
             </div>
             <div className="values">
               {[
-                "Clareza",
-                "Estratégia",
-                "Segurança",
-                "Atendimento online",
+                {
+                  title: "Clareza",
+                  text: "Você entende quais regras podem se aplicar ao seu caso, quais documentos são importantes e quais pendências precisam ser resolvidas.",
+                },
+                {
+                  title: "Estratégia",
+                  text: "A análise compara caminhos possíveis antes do pedido, evitando decisões apressadas e aumentando a segurança administrativa.",
+                },
+                {
+                  title: "Segurança",
+                  text: "A organização prévia reduz erros em vínculos, contribuições, CNIS e documentos que podem atrapalhar a concessão do benefício.",
+                },
+                {
+                  title: "Atendimento próximo",
+                  text: "A comunicação é simples e acessível, com orientação durante as etapas do atendimento e acompanhamento dos próximos passos.",
+                },
               ].map((item) => (
-                <div key={item} className="valueCard">
+                <div key={item.title} className="valueCard">
                   <CheckCircle2 />
-                  <h3>{item}</h3>
-                  <p>Cada análise é feita com atenção aos detalhes e foco no melhor encaminhamento administrativo possível.</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
               ))}
             </div>
