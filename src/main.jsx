@@ -1,7 +1,7 @@
 
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { CheckCircle2, ShieldCheck, FileText, Users, Calculator, MessageCircle, ArrowRight } from "lucide-react";
+import { CheckCircle2, ShieldCheck, FileText, Users, Calculator, MessageCircle, ArrowRight, HeartPulse, Baby, HandHeart, ClipboardCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import "./styles.css";
 
@@ -12,14 +12,34 @@ const services = [
     text: "Análise do histórico contributivo para identificar cenários, pendências e caminhos administrativos possíveis."
   },
   {
+    icon: <ShieldCheck />,
+    title: "Aposentadorias",
+    text: "Orientação administrativa para aposentadoria por idade, tempo de contribuição, especial e regras de transição."
+  },
+  {
+    icon: <HeartPulse />,
+    title: "Auxílio por Incapacidade",
+    text: "Apoio administrativo para organização de documentos, requerimento e acompanhamento de benefícios por incapacidade."
+  },
+  {
+    icon: <HandHeart />,
+    title: "BPC/LOAS",
+    text: "Assessoria administrativa para benefício assistencial à pessoa idosa ou à pessoa com deficiência, conforme os requisitos aplicáveis."
+  },
+  {
+    icon: <Baby />,
+    title: "Salário-Maternidade",
+    text: "Orientação para organização de documentos e solicitação administrativa do salário-maternidade junto ao INSS."
+  },
+  {
+    icon: <ClipboardCheck />,
+    title: "Outros Benefícios do INSS",
+    text: "Análise administrativa de pensão por morte, auxílio-reclusão, revisões, recursos e demais demandas previdenciárias."
+  },
+  {
     icon: <FileText />,
     title: "Revisão de Benefícios",
     text: "Avaliação administrativa de benefícios já concedidos para verificar inconsistências, pendências e oportunidades."
-  },
-  {
-    icon: <ShieldCheck />,
-    title: "Aposentadoria INSS",
-    text: "Orientação administrativa para aposentadoria por idade, tempo de contribuição, especial e regras de transição."
   },
   {
     icon: <Users />,
@@ -60,13 +80,14 @@ function App() {
 
           <div className="container heroGrid">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <img className="heroLogo" src="/marca.png" alt="VerdePrev Assessoria Previdenciária" />
               <span className="eyebrow">Assessoria administrativa previdenciária</span>
               <h1>Seu futuro previdenciário planejado com clareza e estratégia.</h1>
               <p className="lead">
                 A VerdePrev oferece assessoria administrativa previdenciária 100% online para ajudar você a entender seus direitos, organizar contribuições e tomar decisões mais seguras sobre aposentadoria, revisões e benefícios do INSS.
               </p>
               <div className="heroActions">
-                <a className="primaryButton" href="mailto:verdeprev@gmail.com">
+                <a className="primaryButton" href="#contato">
                   Solicitar análise <ArrowRight />
                 </a>
                 <a className="secondaryButton" href="#servicos">Conhecer serviços</a>
@@ -162,7 +183,7 @@ function App() {
               <h2>Vamos planejar seu futuro previdenciário?</h2>
               <span>Fale com a VerdePrev e agende uma análise inicial 100% online para entender os caminhos administrativos possíveis para o seu benefício.</span>
               <div className="ctaActions">
-                <a className="primaryButton" href="mailto:verdeprev@gmail.com">
+                <a className="primaryButton" href="mailto:verdeprev@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20an%C3%A1lise%20previdenci%C3%A1ria">
                   <MessageCircle /> verdeprev@gmail.com
                 </a>
                 <button className="secondaryButton disabled">WhatsApp em breve</button>

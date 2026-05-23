@@ -34,7 +34,7 @@ svg { width: 20px; height: 20px; }
 }
 
 .nav {
-  height: 76px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,7 @@ svg { width: 20px; height: 20px; }
 }
 
 .brand img {
-  height: 52px;
+  height: 78px;
   width: auto;
   display: block;
 }
@@ -79,7 +79,15 @@ svg { width: 20px; height: 20px; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 96px 0 104px;
+  padding: 82px 0 104px;
+}
+
+.heroLogo {
+  display: block;
+  width: min(520px, 100%);
+  height: auto;
+  margin: 0 0 26px;
+  filter: drop-shadow(0 18px 28px rgba(5, 58, 42, 0.12));
 }
 
 .shape {
@@ -472,7 +480,9 @@ footer {
 @media (max-width: 640px) {
   .container { width: min(100% - 28px, 1120px); }
   .hero { padding: 66px 0 74px; }
-  .brand img { height: 42px; }
+  .brand img { height: 58px; }
+  .nav { height: 78px; }
+  .heroLogo { width: min(420px, 100%); margin-bottom: 20px; }
   .miniBenefits, .serviceGrid, .values { grid-template-columns: 1fr; }
   .diagnosticCard { padding: 14px; border-radius: 26px; }
   .diagnosticInner, .aboutText, .cta { padding: 28px; }
