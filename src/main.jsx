@@ -107,18 +107,18 @@ function App() {
               transition={{ duration: 0.6 }}
               className="heroText"
             >
-              <span className="eyebrow">Assessoria administrativa previdenciária 100% online</span>
+              <span className="eyebrow">Atendimento digital com orientação previdenciária especializada</span>
               <img className="heroLogo" src="/09_logo_horizontal_transparente.png" alt="VerdePrev Assessoria Previdenciária" />
-              <h1>A marca é previdência com clareza. O atendimento é administrativo, estratégico e humano.</h1>
+              <h1>Assessoria previdenciária com orientação clara para cada etapa do seu benefício.</h1>
               <p className="lead">
                 A VerdePrev oferece assessoria administrativa previdenciária para aposentadorias, auxílio por incapacidade,
-                BPC/LOAS, salário-maternidade, revisões e outros benefícios do INSS, com atendimento 100% online.
+                BPC/LOAS, salário-maternidade, revisões e outros benefícios do INSS, com atendimento simples, próximo e digital.
               </p>
               <div className="heroActions">
                 <a className="primaryButton" href={mailHref}>
                   Solicitar análise <ArrowRight />
                 </a>
-                <a className="secondaryButton" href="#servicos">Ver benefícios atendidos</a>
+                <a className="secondaryButton" href="#servicos">Conhecer benefícios atendidos</a>
               </div>
               <div className="miniBenefits">
                 {benefits.map((item) => (
@@ -182,7 +182,7 @@ function App() {
                 organização documental, prevenção de erros e tomada de decisão consciente.
               </p>
               <p>
-                O atendimento é 100% online, sem exposição de nome pessoal ou localização, com orientação clara sobre documentos,
+                O atendimento é conduzido de forma digital e próxima, com orientação clara sobre documentos,
                 vínculos, contribuições, pedidos administrativos e acompanhamento junto aos canais oficiais.
               </p>
             </div>
@@ -243,7 +243,7 @@ function App() {
           <img src="/11_logo_header_site_fundo_verde_2400x650.png" alt="VerdePrev Assessoria Previdenciária" />
           <div>
             <p>© 2026 VerdePrev Assessoria Previdenciária. Todos os direitos reservados.</p>
-            <p>Assessoria administrativa previdenciária 100% online.</p>
+            <p>Atendimento digital com orientação previdenciária especializada.</p>
           </div>
         </div>
       </footer>
